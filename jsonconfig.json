@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "checkJs": true,
+      "resolveJsonModule": true,
+      "jsx": "react-jsx"
+    }
+  }

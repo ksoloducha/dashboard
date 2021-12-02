@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react"
+import Header from "./components/global/Header"
+import WidgetView from "./components/main-window/WidgetView"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component
+{
+
+  constructor(props){
+    super(props);
+    this.state = {      
+      theme: false, // false for light, true for dark
+      languages: ['Polski', 'English'],
+      chosenLanguage: 'Polski'
+    }
+  }
+
+  setTheme = (themeValue) => {
+    this.setState({theme: themeValue})
+  }
+
+  setLanguage = (language) => {
+    this.setState({chosenLanguage: language})
+  }
+
+  render() 
+  {
+    return(
+      <div>
+        <Header 
+          onThemeSwitch={this.setTheme}
+          onLanguageChoice={this.setLanguage}
+          languagesList={this.state.languages}
+          initialThemeValue={this.state.theme}
+        />
+        <WidgetView />
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App

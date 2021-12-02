@@ -1,0 +1,18 @@
+.react-switch {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(10%);
+}
+
+.theme-label{
+    margin-left: 2%;
+}
+
+.languages-dropdown {
+    margin-left: 50%;
+}
+
+.user-image{
+    margin-right: 2%;
+}
