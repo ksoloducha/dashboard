@@ -1,0 +1,28 @@
+.widget-icon{
+    height: 300px;
+    width: 300px;
+}
+
+.first-row-icon{
+    margin-top: 5%;
+}
+
+.second-row-icon{
+    margin-top: 4%;
+}
+
+.first-row-first-elem-icon{
+    margin-left: 18%;
+}
+
+.first-row-elem-icon{
+    margin-left: 7%;
+}
+
+.second-row-first-elem-icon{
+    margin-left: 28.5%;
+}
+
+.second-row-elem-icon{
+    margin-left: 9%;
+}

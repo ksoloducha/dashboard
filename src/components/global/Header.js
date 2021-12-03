@@ -22,9 +22,8 @@ const Header = (props) => {
 
     return (
       <Navbar 
-        bg="light" 
+        className='navbar' 
         expand="lg"
-        color="#BDC3C6"
       >
         <Navbar.Brand
           className="theme-label"
@@ -47,6 +46,7 @@ const Header = (props) => {
         <img 
           src={userIcon}
           className="user-image"
+          alt="user profile icon"
         />
       </Navbar>
     )

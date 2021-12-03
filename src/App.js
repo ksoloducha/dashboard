@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Header from "./components/global/Header"
 import WidgetView from "./components/main-window/WidgetView"
+import './App.css'
 
 class App extends Component
 {
@@ -10,7 +11,7 @@ class App extends Component
     this.state = {      
       theme: false, // false for light, true for dark
       languages: ['Polski', 'English'],
-      chosenLanguage: 'Polski'
+      chosenLanguage: 'English'
     }
   }
 
@@ -25,7 +26,9 @@ class App extends Component
   render() 
   {
     return(
-      <div>
+      <div
+        className='app'
+      >
         <Header 
           onThemeSwitch={this.setTheme}
           onLanguageChoice={this.setLanguage}
