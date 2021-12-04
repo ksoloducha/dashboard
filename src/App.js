@@ -2,6 +2,8 @@ import React, {Component} from "react"
 import Header from "./components/global/Header"
 import WidgetView from "./components/main-window/WidgetView"
 import './App.css'
+import './ViewEnum'
+import { views } from "./ViewEnum"
 
 class App extends Component
 {
@@ -11,7 +13,8 @@ class App extends Component
     this.state = {      
       theme: false, // false for light, true for dark
       languages: ['Polski', 'English'],
-      chosenLanguage: 'English'
+      chosenLanguage: 'English',
+      view: views[0]
     }
   }
 
@@ -21,6 +24,10 @@ class App extends Component
 
   setLanguage = (language) => {
     this.setState({chosenLanguage: language})
+  }
+
+  setView = (view) => {
+    this.setState({view: views()[view]})
   }
 
   render() 
@@ -35,7 +42,9 @@ class App extends Component
           languagesList={this.state.languages}
           initialThemeValue={this.state.theme}
         />
-        <WidgetView />
+        <WidgetView 
+          onSelectView={this.setView}
+        />
       </div>
     )
   }
