@@ -10,63 +10,53 @@ import './WidgetView.css'
 import { widgetViews } from '../../ViewEnum'
 
 
-const WidgetView = (props) => {    
+const WidgetView = (props) => {
+
+    const availableViews = widgetViews
+    const widgetIcons = [ordersIcon, sellingQualityIcon, opinionsIcon, offerRankingIcon, sellingChartIcon]
+    const widgetIconStyleClasses = ['orders-widget', 'selling-quality-widget', 'opinions-widget', 'offer-ranking-widget', 'selling-chart-widget']
+    
+    const firstRowWidgets = availableViews.filter((view, index) => index < 3)    
+        .map((view, index) => {
+            let styleClass = widgetIconStyleClasses[index] + ' widget-icon'
+            return(
+                <OverlayTrigger
+                    placement='bottom'
+                    overlay={<Tooltip id={view}>{view}</Tooltip>}
+                >
+                    <img
+                        className={styleClass}
+                        src={widgetIcons[index]}
+                        alt={view}
+                    />
+                </OverlayTrigger>
+            )
+        })
+
+    const secondRowWidgets = availableViews.filter((view, index) => index >= 3)    
+    .map((view, index) => {
+        let styleClass = widgetIconStyleClasses[index+3] + ' widget-icon'
+        return(
+            <OverlayTrigger
+                placement='bottom'
+                overlay={<Tooltip id={view}>{view}</Tooltip>}
+            >
+                <img
+                    className={styleClass}
+                    src={widgetIcons[index+3]}
+                    alt={view}
+                />
+            </OverlayTrigger>
+        )
+    })
 
     return(
         <div>
             <div>
-                <OverlayTrigger
-                    placement='bottom'
-                    overlay={<Tooltip id='orders-tooltip'>Orders</Tooltip>}
-                >
-                    <img
-                        className='widget-icon orders-widget'
-                        src={ordersIcon}
-                        alt='orders widget'
-                    />
-                </OverlayTrigger>
-                <OverlayTrigger
-                    placement='bottom'
-                    overlay={<Tooltip id='orders-tooltip'>Selling quality</Tooltip>}
-                >
-                    <img
-                        className='widget-icon selling-quality-widget'
-                        src={sellingQualityIcon}
-                        alt='selling quality widget'
-                    />
-                </OverlayTrigger>
-                <OverlayTrigger
-                    placement='bottom'
-                    overlay={<Tooltip id='orders-tooltip'>Opinions</Tooltip>}
-                >
-                    <img
-                        className='widget-icon opinions-widget'
-                        src={opinionsIcon}
-                        alt='opinions widget'
-                    />
-                </OverlayTrigger>
+                {firstRowWidgets}
             </div>
             <div>
-                <OverlayTrigger
-                    placement='bottom'
-                    overlay={<Tooltip id='orders-tooltip'>Offer ranking</Tooltip>}
-                >
-                    <img
-                        className='widget-icon offer-ranking-widget'
-                        src={offerRankingIcon}
-                        alt='offer ranking widget'
-                    />
-                </OverlayTrigger>
-                <OverlayTrigger
-                    placement='bottom'
-                    overlay={<Tooltip id='orders-tooltip'>Selling chart</Tooltip>}
-                >
-                <img
-                    className='widget-icon selling-chart-widget'
-                    src={sellingChartIcon}
-                    alt='selling chart widget'
-                />
-                </OverlayTrigger>
+                {secondRowWidgets}
             </div>
         </div>
     )
