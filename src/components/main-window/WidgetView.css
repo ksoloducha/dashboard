@@ -3,16 +3,24 @@
     width: 300px;
 }
 
-.first-row-icon{
+.orders-widget{
     margin-top: 5%;
+    margin-left: 18%;
+}
+
+.selling-quality-widget{
+    margin-top: 5%;
+    margin-left: 7%;
+}
+
+.opinions-widget{
+    margin-top: 5%;
+    margin-left: 7%;
+    margin-right: 18%;
 }
 
 .second-row-icon{
     margin-top: 4%;
-}
-
-.first-row-first-elem-icon{
-    margin-left: 18%;
 }
 
 .first-row-elem-icon{
@@ -25,4 +33,39 @@
 
 .second-row-elem-icon{
     margin-left: 9%;
+}
+
+@media (max-width: 1800px) {
+    .widget-icon{
+        height: 270px;
+        width: 270px;
+    }
+}
+
+@media (max-width: 1620px) {
+    .widget-icon{
+        height: 230px;
+        width: 230px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .widget-icon{
+        height: 190px;
+        width: 190px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .widget-icon{
+        height: 170px;
+        width: 170px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .widget-icon{
+        height: 120px;
+        width: 120px;
+    }
 }
