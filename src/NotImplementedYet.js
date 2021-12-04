@@ -3,17 +3,15 @@ import Button from 'react-bootstrap/Button'
 
 const NotImplementedYet = (props) =>{
 
-    const goBack = () => {
-
+    const goBackToMainWindow = () => {          
+        props.onSelectView('Main window')
     }
 
     return(
-        <div>
-            <div>
-                NOT IMPLEMENTED YET
-            </div>
+        <div
+        >
             <Button
-                onClick={goBack}
+                onClick={goBackToMainWindow}
             >
                 BACK    
             </Button>

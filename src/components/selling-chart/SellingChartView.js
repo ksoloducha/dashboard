@@ -27,7 +27,7 @@ const SellingChartView = (props) => {
         setTimePeriod(newTimePeriod)
     }
 
-    const selectView = (e) => {          
+    const goBackToMainWindow = () => {          
         props.onSelectView('Main window')
     }
 
@@ -49,7 +49,7 @@ const SellingChartView = (props) => {
             </div>
             <Button
                 className='secondary-button main-menu-button'
-                onClick={selectView}
+                onClick={goBackToMainWindow}
             >
                 MAIN MENU
             </Button>
