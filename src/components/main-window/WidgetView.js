@@ -18,7 +18,7 @@ const WidgetView = () => {
                     overlay={<Tooltip id='orders-tooltip'>Orders</Tooltip>}
                 >
                     <img
-                        className='widget-icon first-row-icon first-row-first-elem-icon'
+                        className='widget-icon orders-widget'
                         src={ordersIcon}
                         alt='orders widget'
                     />
@@ -28,7 +28,7 @@ const WidgetView = () => {
                     overlay={<Tooltip id='orders-tooltip'>Selling quality</Tooltip>}
                 >
                     <img
-                        className='widget-icon first-row-icon first-row-elem-icon'
+                        className='widget-icon selling-quality-widget'
                         src={sellingQualityIcon}
                         alt='orders widget'
                     />
@@ -38,7 +38,7 @@ const WidgetView = () => {
                     overlay={<Tooltip id='orders-tooltip'>Opinions</Tooltip>}
                 >
                     <img
-                        className='widget-icon first-row-icon first-row-elem-icon'
+                        className='widget-icon opinions-widget'
                         src={opinionsIcon}
                         alt='orders widget'
                     />
