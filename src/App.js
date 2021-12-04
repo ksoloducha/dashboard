@@ -4,6 +4,7 @@ import WidgetView from "./components/main-window/WidgetView"
 import './App.css'
 import './ViewEnum'
 import { views } from "./ViewEnum"
+import SellingChartView from "./components/selling-chart/SellingChartView"
 
 class App extends Component
 {
@@ -44,9 +45,10 @@ class App extends Component
           languagesList={this.state.languages}
           initialThemeValue={this.state.theme}
         />
-        <WidgetView 
+        {/* <WidgetView 
           onSelectView={this.setView}
-        />
+        /> */}
+        <SellingChartView></SellingChartView>
       </div>
     )
   }
