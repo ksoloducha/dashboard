@@ -16,6 +16,7 @@ const ChartSettings = (props) => {
         return(
             <Dropdown.Item
                 eventKey={timePeriod}
+                key={timePeriod}
             >
                 {timePeriod}
             </Dropdown.Item>
@@ -23,19 +24,19 @@ const ChartSettings = (props) => {
     })
 
     const changeMeasurement = () => {
-        var newMeasurement = measurements.filter((m) => m !== measurement)
+        var newMeasurement = measurements.filter((m) => m != measurement)
         setMeasurement(newMeasurement)
         props.onMeasurementChange(newMeasurement)
     }
 
     const changeChartType = () => {
-        var newChartType = chartTypes.filter((c) => c !== chartType)
+        var newChartType = chartTypes.filter((c) => c != chartType)
         setChartType(newChartType)
         props.onChartTypeChange(newChartType)
     }
 
     const changeShowPreviousPeriod = () => {
-        var newShowPreviousPeriod = showPreviousPeriodOptions.filter((s) => s !== showPreviousPeriod)
+        var newShowPreviousPeriod = showPreviousPeriodOptions.filter((s) => s != showPreviousPeriod)
         setShowPreviousPeriod(newShowPreviousPeriod)
         props.onShowPreviousPeriodChange(newShowPreviousPeriod)
     }

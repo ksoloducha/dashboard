@@ -13,18 +13,22 @@ const SellingChartView = () => {
 
     const handleMeasurementChange = (newMeasurement) => {
         setMeasurement(newMeasurement)
+        console.log(newMeasurement)
     }
 
     const handleChartTypeChange = (newChartType) => {
         setChartType(newChartType)
+        console.log(newChartType)
     }
 
     const handleShowPreviousPeriodChange = (newShowPreviousPeriod) => {
         setShowPreviousPeriod(newShowPreviousPeriod)
+        console.log(newShowPreviousPeriod)
     }
 
     const handleTimePeriodChange = (newTimePeriod) => {
         setTimePeriod(newTimePeriod)
+        console.log(newTimePeriod)
     }
 
     return(
