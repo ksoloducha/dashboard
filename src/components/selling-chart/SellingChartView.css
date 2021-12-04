@@ -1,0 +1,13 @@
+.chart-settings{
+    background-color: rgba(32, 19, 53, 0.5);
+    text-align: center;
+    width: 50vh;
+    height: 70vh;
+    margin-left: 4%;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
+.main-menu-button{
+    margin-left: 13%;
+}
