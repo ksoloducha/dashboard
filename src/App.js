@@ -5,6 +5,7 @@ import './App.css'
 import './ViewEnum'
 import { views } from "./ViewEnum"
 import SellingChartView from "./components/selling-chart/SellingChartView"
+import NotImplementedYet from "./NotImplementedYet"
 
 class App extends Component
 {
@@ -33,6 +34,30 @@ class App extends Component
     console.log(this.state.view)
   }
 
+  currentView = () => {
+    console.log(this.state.view)
+    switch (this.state.view) {
+      case 'Main window':
+        return(
+          <WidgetView
+            onSelectView={this.setView}
+          />
+        )
+      case 'Selling chart':
+        return(
+          <SellingChartView
+            onSelectView={this.setView}
+          />
+        )
+      default:
+        return(
+          <NotImplementedYet
+            onSelectView={this.setView}
+          />
+        )        
+    }
+  }
+
   render() 
   {
     return(
@@ -45,10 +70,7 @@ class App extends Component
           languagesList={this.state.languages}
           initialThemeValue={this.state.theme}
         />
-        {/* <WidgetView 
-          onSelectView={this.setView}
-        /> */}
-        <SellingChartView></SellingChartView>
+        {this.currentView()}
       </div>
     )
   }
