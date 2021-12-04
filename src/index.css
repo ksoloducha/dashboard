@@ -1,0 +1,19 @@
+.secondary-button,
+.btn-secondary.dropdown-toggle {
+    background-color: #FFB17A;
+    border-color: #FFB17A;
+    color: #FFFDED;
+}
+
+.secondary-button:hover,
+.btn-secondary.dropdown-toggle:hover {
+    background-color: #ED985D;
+    border-color: #ED985D;
+}
+
+.secondary-button:focus,
+.btn-secondary.dropdown-toggle:focus {
+    background-color: #ED985D !important;
+    border-color: #ED985D;
+    box-shadow: none !important;
+}

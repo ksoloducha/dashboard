@@ -2,8 +2,10 @@ import React, {Component} from "react"
 import Header from "./components/global/Header"
 import WidgetView from "./components/main-window/WidgetView"
 import './App.css'
-import './ViewEnum'
-import { views } from "./ViewEnum"
+import { views, mainWindow } from "./ViewEnum"
+import SellingChartView from "./components/selling-chart/SellingChartView"
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 class App extends Component
 {
@@ -28,8 +30,48 @@ class App extends Component
 
   setView = (newView) => {
     this.setState({view: newView})
-    //DELETE LOG LATER
-    console.log(this.state.view)
+  }
+
+  openMainMenu = () => {
+    this.setState({view: mainWindow})
+  }
+
+  currentView = () => {
+    switch (this.state.view) {
+      case 'Main window':
+        return(
+          <WidgetView
+            onSelectView={this.setView}
+          />
+        )
+      case 'Selling chart':
+        return(
+          <SellingChartView
+            onGoBack={this.openMainMenu}
+          />
+        )
+      default:
+        return(
+          <Modal.Dialog>
+            <Modal.Header>
+              <Modal.Title>Not implemented yet</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <p>We are still workin on this functionality</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button 
+                variant="secondary"
+                onClick={this.openMainMenu}
+              >
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal.Dialog>
+        )        
+    }
   }
 
   render() 
@@ -44,9 +86,7 @@ class App extends Component
           languagesList={this.state.languages}
           initialThemeValue={this.state.theme}
         />
-        <WidgetView 
-          onSelectView={this.setView}
-        />
+        {this.currentView()}
       </div>
     )
   }

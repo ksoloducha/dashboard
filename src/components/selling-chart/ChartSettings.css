@@ -1,0 +1,26 @@
+.label {
+    color: #FFFDED;
+    font-size: 20px;
+}
+
+.clickable-text{
+    color: #FFB17A;
+    font-size: 25px;
+}
+
+.clickable-text:hover{
+    text-decoration: underline;
+}
+
+.previous-period-button{
+    width: fit-content;
+    align-self: center;
+}
+
+.dropdown-item:hover{
+    background-color: #FBE8DA !important;
+}
+
+.dropdown-item:focus{
+    background-color: #FFB17A !important;
+}
