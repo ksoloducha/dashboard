@@ -3,7 +3,7 @@ import Header from "./components/global/Header"
 import WidgetView from "./components/main-window/WidgetView"
 import './App.css'
 import './ViewEnum'
-import { views, viewValues } from "./ViewEnum"
+import { views } from "./ViewEnum"
 
 class App extends Component
 {
@@ -14,7 +14,7 @@ class App extends Component
       theme: false, // false for light, true for dark
       languages: ['Polski', 'English'],
       chosenLanguage: 'English',
-      view: viewValues()[0]
+      view: views[0]
     }
   }
 
