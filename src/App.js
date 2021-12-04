@@ -28,6 +28,7 @@ class App extends Component
 
   setView = (newView) => {
     this.setState({view: newView})
+    //DELETE LOG LATER
     console.log(this.state.view)
   }
 
