@@ -24,7 +24,7 @@ const ChartSettings = (props) => {
                 >MEASUREMENT</label>
                 <label
                     className='clickable-text'
-                >NUMBER OF SOLD PRODUCTS</label>
+                >{props.initialMeasurement}</label>
             </Stack>
             <Stack
                 direction='vertical'
@@ -35,7 +35,7 @@ const ChartSettings = (props) => {
                 >CHART TYPE</label>
                 <label
                     className='clickable-text'
-                >BAR</label>
+                >{props.initialChartType}</label>
             </Stack>
             <Stack
                 direction='vertical'

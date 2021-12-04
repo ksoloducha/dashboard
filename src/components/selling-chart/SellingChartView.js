@@ -2,30 +2,29 @@ import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button'
 import './SellingChartView.css'
 import ChartSettings from './ChartSettings'
-import { chartTypes, measurements, timePeriods } from './Settings'
+import { chartTypes, measurements, showPreviousPeriodOptions, timePeriods } from './Settings'
 
 const SellingChartView = () => {
 
     const [measurement, setMeasurement] = useState(measurements[0])
     const [chartType, setChartType] = useState(chartTypes[0])
-    const [showPreviousPeriod, setShowPreviousPeriod] = useState(false)
+    const [showPreviousPeriod, setShowPreviousPeriod] = useState(showPreviousPeriodOptions[0])
     const [timePeriod, setTimePeriod] = useState(timePeriods[1])
 
     const handleMeasurementChange = (newMeasurement) => {
-        setMeasurement(this.newMeasurement)
+        setMeasurement(newMeasurement)
     }
 
     const handleChartTypeChange = (newChartType) => {
         setChartType(newChartType)
     }
 
-    const handleShowPreviousPeriodChange = () => {
-        var newShowPreviousPeriod = !showPreviousPeriod
-        setShowPreviousPeriod(this.newShowPreviousPeriod)
+    const handleShowPreviousPeriodChange = (newShowPreviousPeriod) => {
+        setShowPreviousPeriod(newShowPreviousPeriod)
     }
 
     const handleTimePeriodChange = (newTimePeriod) => {
-        setTimePeriod(this.newTimePeriod)
+        setTimePeriod(newTimePeriod)
     }
 
     return(
