@@ -42,7 +42,9 @@ class App extends Component
           languagesList={this.state.languages}
           initialThemeValue={this.state.theme}
         />
-        <WidgetView />
+        <WidgetView 
+          onSelectView={this.setView}
+        />
       </div>
     )
   }
