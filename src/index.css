@@ -1,0 +1,16 @@
+.secondary-button{
+    background-color: #FFB17A;
+    border-color: #FFB17A;
+    color: #FFFDED;
+}
+
+.secondary-button:hover{
+    background-color: #ED985D;
+    border-color: #ED985D;
+}
+
+.secondary-button:focus{
+    background-color: #ED985D;
+    border-color: #ED985D;
+    box-shadow: none !important;
+}
