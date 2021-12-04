@@ -26,8 +26,9 @@ class App extends Component
     this.setState({chosenLanguage: language})
   }
 
-  setView = (view) => {
-    this.setState({view: views()[view]})
+  setView = (newView) => {
+    this.setState({view: newView})
+    console.log(this.state.view)
   }
 
   render() 

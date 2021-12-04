@@ -15,6 +15,10 @@ const WidgetView = (props) => {
     const availableViews = widgetViews
     const widgetIcons = [ordersIcon, sellingQualityIcon, opinionsIcon, offerRankingIcon, sellingChartIcon]
     const widgetIconStyleClasses = ['orders-widget', 'selling-quality-widget', 'opinions-widget', 'offer-ranking-widget', 'selling-chart-widget']
+
+    const selectView = (e) => {          
+        props.onSelectView(e.target.alt)
+    }
     
     const firstRowWidgets = availableViews.filter((view, index) => index < 3)    
         .map((view, index) => {
@@ -23,11 +27,13 @@ const WidgetView = (props) => {
                 <OverlayTrigger
                     placement='bottom'
                     overlay={<Tooltip id={view}>{view}</Tooltip>}
+                    key={view}
                 >
                     <img
                         className={styleClass}
                         src={widgetIcons[index]}
                         alt={view}
+                        onClick={selectView}
                     />
                 </OverlayTrigger>
             )
@@ -40,11 +46,13 @@ const WidgetView = (props) => {
             <OverlayTrigger
                 placement='bottom'
                 overlay={<Tooltip id={view}>{view}</Tooltip>}
+                key={view}
             >
                 <img
                     className={styleClass}
                     src={widgetIcons[index+3]}
                     alt={view}
+                    onClick={selectView}
                 />
             </OverlayTrigger>
         )
