@@ -7,8 +7,10 @@ import opinionsIcon from '../../images/opinions.png'
 import offerRankingIcon from '../../images/offer-ranking.png'
 import sellingChartIcon from '../../images/selling-chart.png'
 import './WidgetView.css'
+import { widgetViews } from '../../ViewEnum'
 
-const WidgetView = () => {
+
+const WidgetView = (props) => {    
 
     return(
         <div>
@@ -30,7 +32,7 @@ const WidgetView = () => {
                     <img
                         className='widget-icon selling-quality-widget'
                         src={sellingQualityIcon}
-                        alt='orders widget'
+                        alt='selling quality widget'
                     />
                 </OverlayTrigger>
                 <OverlayTrigger
@@ -40,7 +42,7 @@ const WidgetView = () => {
                     <img
                         className='widget-icon opinions-widget'
                         src={opinionsIcon}
-                        alt='orders widget'
+                        alt='opinions widget'
                     />
                 </OverlayTrigger>
             </div>
@@ -50,9 +52,9 @@ const WidgetView = () => {
                     overlay={<Tooltip id='orders-tooltip'>Offer ranking</Tooltip>}
                 >
                     <img
-                        className='widget-icon second-row-icon second-row-first-elem-icon'
+                        className='widget-icon offer-ranking-widget'
                         src={offerRankingIcon}
-                        alt='orders widget'
+                        alt='offer ranking widget'
                     />
                 </OverlayTrigger>
                 <OverlayTrigger
@@ -60,9 +62,9 @@ const WidgetView = () => {
                     overlay={<Tooltip id='orders-tooltip'>Selling chart</Tooltip>}
                 >
                 <img
-                    className='widget-icon second-row-icon second-row-elem-icon'
+                    className='widget-icon selling-chart-widget'
                     src={sellingChartIcon}
-                    alt='orders widget'
+                    alt='selling chart widget'
                 />
                 </OverlayTrigger>
             </div>
