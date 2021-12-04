@@ -4,10 +4,17 @@ import Button from 'react-bootstrap/Button'
 import DropdowbButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import './ChartSettings.css'
+import { timePeriods } from './Settings'
 
 const ChartSettings = (props) => {
 
-    const possibleTimePeriods = ['Today', 'This week', 'Last week']
+    const dropdownItems = timePeriods.map((timePeriod) => {
+        return(
+            <Dropdown.Item>
+                {timePeriod}
+            </Dropdown.Item>
+        )
+    })
 
     return(
         <Stack
@@ -47,7 +54,7 @@ const ChartSettings = (props) => {
                 <Button
                     className='secondary-button previous-period-button'
                 >
-                    YES
+                    {props.initialShowPreviousPeriod}
                 </Button>
             </Stack>
             <Stack
@@ -59,12 +66,10 @@ const ChartSettings = (props) => {
                 >TIME PERIOD</label>
                 <DropdowbButton
                     id='time-period-dropdown'
-                    title="time period"
+                    title={props.initialTimePeriod}
                     variant='secondary'
                 >
-                    <Dropdown.Item>{possibleTimePeriods[0]}</Dropdown.Item>
-                    <Dropdown.Item>{possibleTimePeriods[1]}</Dropdown.Item>
-                    <Dropdown.Item>{possibleTimePeriods[2]}</Dropdown.Item>
+                    {dropdownItems}
                 </DropdowbButton>
             </Stack>
         </Stack>

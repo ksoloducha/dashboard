@@ -18,9 +18,9 @@
 }
 
 .dropdown-item:hover{
-    background-color: #FBE8DA;
+    background-color: #FBE8DA !important;
 }
 
 .dropdown-item:focus{
-    background-color: #FFB17A;
+    background-color: #FFB17A !important;
 }
