@@ -37,7 +37,6 @@ class App extends Component
   }
 
   currentView = () => {
-    console.log(this.state.view)
     switch (this.state.view) {
       case 'Main window':
         return(
