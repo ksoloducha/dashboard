@@ -21,7 +21,7 @@ const SellingChartView = () => {
 
     const handleShowPreviousPeriodChange = () => {
         var newShowPreviousPeriod = !showPreviousPeriod
-        setMeasurement(this.newShowPreviousPeriod)
+        setShowPreviousPeriod(this.newShowPreviousPeriod)
     }
 
     const handleTimePeriodChange = (newTimePeriod) => {
@@ -34,6 +34,10 @@ const SellingChartView = () => {
                 className='chart-settings'
             >
                 <ChartSettings 
+                    initialMeasurement={measurement}
+                    initialChartType={chartType}
+                    initialShowPreviousPeriod={showPreviousPeriod}
+                    initialTimePeriod={timePeriod}
                     onMeasurementChange={handleMeasurementChange}
                     onChartTypeChange={handleChartTypeChange}
                     onShowPreviousPeriodChange={handleShowPreviousPeriodChange}
