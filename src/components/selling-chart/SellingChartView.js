@@ -28,7 +28,7 @@ const SellingChartView = (props) => {
     }
 
     const goBackToMainWindow = () => {          
-        props.onSelectView('Main window')
+        props.onGoBack('Main window')
     }
 
     return(

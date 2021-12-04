@@ -2,10 +2,10 @@ import React, {Component} from "react"
 import Header from "./components/global/Header"
 import WidgetView from "./components/main-window/WidgetView"
 import './App.css'
-import './ViewEnum'
-import { views } from "./ViewEnum"
+import { views, mainWindow } from "./ViewEnum"
 import SellingChartView from "./components/selling-chart/SellingChartView"
-import NotImplementedYet from "./NotImplementedYet"
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 class App extends Component
 {
@@ -32,6 +32,10 @@ class App extends Component
     this.setState({view: newView})
   }
 
+  openMainMenu = () => {
+    this.setState({view: mainWindow})
+  }
+
   currentView = () => {
     console.log(this.state.view)
     switch (this.state.view) {
@@ -44,14 +48,29 @@ class App extends Component
       case 'Selling chart':
         return(
           <SellingChartView
-            onSelectView={this.setView}
+            onGoBack={this.openMainMenu}
           />
         )
       default:
         return(
-          <NotImplementedYet
-            onSelectView={this.setView}
-          />
+          <Modal.Dialog>
+            <Modal.Header>
+              <Modal.Title>Not implemented yet</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <p>We are still workin on this functionality</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button 
+                variant="secondary"
+                onClick={this.openMainMenu}
+              >
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal.Dialog>
         )        
     }
   }
