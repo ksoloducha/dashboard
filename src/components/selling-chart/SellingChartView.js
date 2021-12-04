@@ -4,7 +4,7 @@ import './SellingChartView.css'
 import ChartSettings from './ChartSettings'
 import { chartTypes, measurements, showPreviousPeriodOptions, timePeriods } from './Settings'
 
-const SellingChartView = () => {
+const SellingChartView = (props) => {
 
     const [measurement, setMeasurement] = useState(measurements[0])
     const [chartType, setChartType] = useState(chartTypes[0])
@@ -27,6 +27,10 @@ const SellingChartView = () => {
         setTimePeriod(newTimePeriod)
     }
 
+    const selectView = (e) => {          
+        props.onSelectView('Main window')
+    }
+
     return(
         <div>
             <div
@@ -45,6 +49,7 @@ const SellingChartView = () => {
             </div>
             <Button
                 className='secondary-button main-menu-button'
+                onClick={selectView}
             >
                 MAIN MENU
             </Button>
