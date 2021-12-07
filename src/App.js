@@ -6,6 +6,7 @@ import { views, mainWindow } from "./ViewEnum"
 import SellingChartView from "./components/selling-chart/SellingChartView"
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import OrdersView from "./components/orders/OrdersView"
 
 class App extends Component
 {
@@ -47,6 +48,12 @@ class App extends Component
       case 'Selling chart':
         return(
           <SellingChartView
+            onGoBack={this.openMainMenu}
+          />
+        )
+      case 'Orders':
+        return(
+          <OrdersView 
             onGoBack={this.openMainMenu}
           />
         )
